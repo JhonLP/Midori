@@ -1,0 +1,305 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+  <title>Midori - Red Social de Hortaleros</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
+  <link rel="stylesheet" href="static/css/adapt.css" type="text/css"/>
+  <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="static/css/tooltipster.css" type="text/css"/>
+  <link rel="stylesheet" href="static/css/jquery.selectBoxIt.css" type="text/css"/>
+  <link rel="stylesheet" href="static/css/autoSuggest.css" type="text/css"/>
+  <!--
+  <link rel="stylesheet" href="../code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  -->
+  <link rel="stylesheet" href="static/css/rrssb.css" type="text/css"/>
+  <link rel="stylesheet" href="static/css/jquery.resizeandcrop.css" type="text/css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <!--
+  <script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+  -->
+  <script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
+  <script type="text/javascript" src="static/js/jquery.resizeandcrop.js"></script>
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="/static/js/froala/froala_editor_ie8.min"></script>
+      <![endif]-->
+      <script type="text/javascript" src="static/js/jquery.selectBoxIt.js"></script>
+      <script type="text/javascript" src="static/js/parsley.min.js"></script>
+      <script type="text/javascript" src="static/js/jquery.tooltipster.min.js"></script>
+      <script type="text/javascript" src="static/js/rrssb.js"></script>
+      <script type="text/javascript" src="static/js/jquery.init.js"></script>
+      <script type="text/javascript" src="static/js/jquery.autoSuggest.minified.js"></script>
+      <script type="text/javascript" src="static/js/jquery.django-favorites.js"></script>
+      <script type="text/javascript" src="static/js/jquery.django-likes.js"></script>
+      <script type="text/javascript" src="static/js/jquery.django-follows.js"></script>
+      <script type="text/javascript" src="static/js/jquery.django-report.js"></script>
+      <script type="text/javascript" src="static/js/global.js"></script>
+      
+      <meta name="description" content="Share, discover and discuss all things golf."/>
+      <meta property="og:url" content="http://www.golfledger.com/"/>
+      <meta property="og:title" content="Golf Ledger"/>
+      <meta property="og:site_name" content="Golf Ledger"/>
+      <meta property="og:description" content="Share, discover and discuss all things golf."/>
+      <meta name="twitter:site" content="@golfledger"/>
+      <meta name="twitter:creator" content="@deronsizemore"/>
+    </head>
+    <body id="home" class="">
+      <div id="header">
+        <div class="inner-wrap clearfix">
+          <div id="logo">
+            <a href="index.html"><img src="static/images/logo.png" alt="Golf Ledger"></a>
+          </div>
+          <a id="toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <ul id="nav" class="clearfix">
+            <li class="search">
+              <form action="http://www.golfledger.com/search/" name="search">
+                <fieldset>
+                  <input name="q" value="" id="search" placeholder="Search"/>
+                </fieldset>
+              </form>
+            </li>
+            <li class="right-nav"><a href="signup/index.html">Sign up</a></li>
+            <li class="right-nav"><a href="signin/index.html">Sign in</a></li>
+            <li class="left-nav has-sub"><a href="categories/index.html">Categories <i class="fa fa-caret-down"></i></a>
+              <ul class="categories">
+                <li>
+                  <a href="category/courses/index.html" title="Courses"><span class="cat-green cat-name">Courses</span> <span class="cat-count">6</span></a>
+                </li>
+                <li>
+                  <a href="category/deals/index.html" title="Deals"><span class="cat-cyan cat-name">Deals</span> <span class="cat-count">11</span></a>
+                </li>
+                <li>
+                  <a href="category/equipment/index.html" title="Equipment"><span class="cat-orange cat-name">Equipment</span> <span class="cat-count">14</span></a>
+                </li>
+                <li>
+                  <a href="category/general-discussion/index.html" title="General Discussion"><span class="cat-blue cat-name">General Discussion</span> <span class="cat-count">54</span></a>
+                </li>
+                <li>
+                  <a href="category/instruction/index.html" title="Instruction"><span class="cat-red cat-name">Instruction</span> <span class="cat-count">13</span></a>
+                </li>
+                <li>
+                  <a href="category/pics/index.html" title="Pics"><span class="cat-turquoise cat-name">Pics</span> <span class="cat-count">7</span></a>
+                </li>
+                <li>
+                  <a href="category/products/index.html" title="Products"><span class="cat-teal cat-name">Products</span> <span class="cat-count">3</span></a>
+                </li>
+                <li>
+                  <a href="category/swings/index.html" title="Swings"><span class="cat-yellow cat-name">Swings</span> <span class="cat-count">4</span></a>
+                </li>
+                <li>
+                  <a href="category/tour-talk/index.html" title="Tour Talk"><span class="cat-purple cat-name">Tour Talk</span> <span class="cat-count">39</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="left-nav has-sub">
+              <a href="articles/index.html">Articles <i class="fa fa-caret-down"></i></a>
+              <ul>
+                <li><a href="articles/blog/index.html">Blog</a></li>
+                <li><a href="articles/pro-talk/index.html">Pro Talk</a></li>
+                <li><a href="articles/tags/index.html"><i class="fa fa-tags"></i>Tags</a></li>
+              </ul>
+            </li>
+            <li class="left-nav last-nav-left ellipsis has-sub">
+              <a href="about/index.html"><i class="fa fa-ellipsis-h"></i><span class="nav-more">More</span></a>
+              <ul>
+                <li><a href="leaderboard/index.html" title="Leaderboard">Leaderboard</a></li>
+                <li class="separate"><a href="about/index.html" title="About Golf Ledger">About</a></li>
+                <li><a href="faq/index.html" title="Fequently Asked Questions">FAQ</a></li>
+                <li><a href="guidelines/index.html" title="Community Guidelines">Community Guidelines</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="sub-header" class="green-header">
+        <div class="inner-wrap clearfix">
+          <h1>A Community Where Golfers Share, Discover and Discuss All Things Golf</h1>
+          <ul>
+            <li><a href="signup/index.html" title="Join the Community" class="join-button">Join the Community</a></li>
+            <li>or <a href="signin/index.html">Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div class="inner-wrap clearfix">
+          <ul id="filter" class="clearfix">
+            <li class="active"><a href="index.html" title="Popular Posts">Popular</a></li>
+            <li><a href="following/index.html" title="Links from People you're Following">Following</a></li>
+            <li><a href="new/index.html" title="Newly Submitted Posts">New</a></li>
+            <li><a href="activity/index.html" title="Posts Sorted by Newest Activity">Activity</a></li>
+            <li class="guidelines-link"><a id="go-guidelines" href="#guidelines-modal">Guidelines</a></li>
+            <div id="guidelines-modal">
+              <div class="guidelines-modal-header">
+                <h2>Community Guidelines</h2>
+                <a href="javascript:void(0)" class="modal_close"><i class="fa fa-close"></i></a>
+              </div>
+              <div class="guidelines-modal-main">
+                <p>Before you post, have a quick look at the rules.</p>
+                <ul>
+                  <li>Posts must be golf related.</li>
+                  <li>No nudity, suggestive, or otherwise offensive content.</li>
+                  <li>No blogspam.</li>
+                  <li>Be civil and respectful of others.</li>
+                </ul>
+                <p><a href="guidelines/index.html">Full community guidelines</a></p>
+              </div>
+            </div>
+          </ul>
+          <div id="main-wrap">
+            <div id="main">
+
+              <div class="post clearfix no-img ">
+                <ul class="post-extras">
+                  <li class="post-category">
+                    <a href="category/general-discussion/index.html" title="General Discussion" class="blue">General Discussion</a>
+                  </li>
+                  <li class="fav-wrap">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='eEPRKu98M85xDbEqqapQ4aSUrdcdu5Gs'/>
+                    <a href="signup/index.html" title="favorite"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">0</span></a>
+                  </li>
+                  <li class="post-latest-comment">
+                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#c=652" title="golpher replied 3 days, 13 hours ago" class="tooltip"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/3aa31a191a3578.jpg?Signature=q1XQ7P7T5nXKCgPcsXTB06XDCqc%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="golpher"/></a>
+                  </li>
+                </ul>
+                <div class="like-wrap ">
+                  <input type='hidden' name='csrfmiddlewaretoken' value='eEPRKu98M85xDbEqqapQ4aSUrdcdu5Gs'/>
+                  <a href="signup/index.html" title="like"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_661">4</span></a>
+                </div>
+                <div class="post-details">
+                  <h2>
+                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html" title="I think its safe to assume that I ...">I think its safe to assume that I can&#39;t do this</a> <span>(imgur.com)</span></h2>
+                    <ul class="post-footer clearfix">
+                      <li class="submitter"><a href="nikegolfer/index.html" title="nikegolfer"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/f5e2f83c91c9d2.jpg?Signature=q9OBmQQPjcXOpmJmUB7WfCOYZXQ%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt=""/>nikegolfer</a>
+                      </li>
+                      <li class="comment"><a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#commentstart" title="2 replies"><i class="fa fa-comment"></i>2 replies</a></li>
+                      <li class="post-date">
+                        <i class="fa fa-clock-o"></i>3 weeks ago
+                      </li>
+                      <li class="mobile-category">
+                        <a href="category/general-discussion/index.html" title="General Discussion" class="blue"><i class="fa fa-folder"></i> General Discussion</a>
+                      </li>
+                      <li class="report">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='eEPRKu98M85xDbEqqapQ4aSUrdcdu5Gs'/>
+                        <a href="signup/index.html" title="Project-Id-Version: Django
+                        Report-Msgid-Bugs-To: 
+                        POT-Creation-Date: 2013-10-09 20:17+0200
+                        PO-Revision-Date: 2010-05-13 15:35+0200
+                        Last-Translator: Django team
+                        Language-Team: English &lt;en@li.org&gt;
+                        Language: en
+                        MIME-Version: 1.0
+                        Content-Type: text/plain; charset=UTF-8
+                        Content-Transfer-Encoding: 8bit
+                        "><i class="fa fa-flag tooltip" title="Report as spam or inappropriate?"></i></a>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="post clearfix  ">
+                <ul class="post-extras">
+                  <li class="post-category">
+                    <a href="category/general-discussion/index.html" title="General Discussion" class="blue">General Discussion</a>
+                  </li>
+                  <li class="fav-wrap">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='eEPRKu98M85xDbEqqapQ4aSUrdcdu5Gs'/>
+                    <a href="signup/index.html" title="favorite"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_660">1</span></a>
+                  </li>
+                  <li class="post-latest-comment">
+                    <a href="660/rickie-fowler-lighting-up-the-17th-at-sawgrass-three-of-his-final-tee-shots-on-sunday/index.html#c=622" title="nikegolfer replied 3 weeks, 2 days ago" class="tooltip"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/f5e2f83c91c9d2.jpg?Signature=q9OBmQQPjcXOpmJmUB7WfCOYZXQ%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="nikegolfer"/></a>
+                  </li>
+                </ul>
+                <div class="like-wrap ">
+                  <input type='hidden' name='csrfmiddlewaretoken' value='eEPRKu98M85xDbEqqapQ4aSUrdcdu5Gs'/>
+                  <a href="signup/index.html" title="like"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_660">3</span></a>
+                </div>
+                <img src="../golfledger.s3.amazonaws.com/uploads/links/images/2e871ce9-21bd-48a9-89a3-2d035c7df532.jpg" alt="Image for Rickie Fowler lighting up the ..." class="post-img"/>
+
+              </div>
+            </div>
+
+            <div id="page">
+              <div class="inner-wrap">
+                <a href="index2679.html?page=1" class="prev">&lsaquo;&lsaquo; Previous</a>
+                <a href="index9ba9.html?page=3" class="next">Next &rsaquo;&rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <div class="inner-wrap clearfix">
+          <div class="section newsletter">
+            <p>Golf Ledger is a community of golf enthusiasts that love to share, discover and discuss the most interesting golf related links from around the web. <a href="about/index.html" title="About Golf Ledger">Learn more <i class="fa fa-long-arrow-right"></i></a></p>
+            <h3>Subscribe</h3>
+            <p>Subscribe to the newsletter to receive news, site updates and free stuff via email. We don't do spam.</p>
+            <form action="http://golfledger.us7.list-manage1.com/subscribe/post?u=b2f355b7b681689b286b3db3b&amp;id=74face5955" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <fieldset>
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"/>
+
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_b2f355b7b681689b286b3db3b_74face5955" tabindex="-1" value=""></div>
+                <div>
+                  <input type="email" placeholder="signup@email.com" id="newsletter-email" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="section community">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="index.html" title="Browse Links">Browse Links</a></li>
+              <li><a href="articles/index.html" title="Browse Articles">Browse Articles</a></li>
+              <li><a href="leaderboard/index.html" title="View the Leaderboard">Leaderboard</a></li>
+              <li><a href="http://eepurl.com/T9w7T" title="Sign Up for the Golf Ledger Newsletter">Newsletter</a></li>
+            </ul>
+          </div>
+          <div class="section company">
+            <h3>Golf Ledger</h3>
+            <ul>
+              <li><a href="about/index.html" title="About Golf Ledger">About</a></li>
+              <li><a href="faq/index.html" title="Frequently asked Questions">FAQ</a></li>
+              <li><a href="guidelines/index.html" title="Golf Ledger Community Guidelines">Community Guidelines</a></li>
+              <li><a href="articles/blog/index.html" title="Golf Ledger Blog">Blog</a></li>
+              <li><a href="contact/index.html" title="Contact us">Contact</a></li>
+            </ul>
+          </div>
+          <div class="section legal">
+            <h3>Legal Stuff</h3>
+            <ul>
+              <li><a href="privacy/index.html" title="Privacy Policy">Privacy Policy</a></li>
+              <li><a href="terms/index.html" title="Terms of Service">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="section social">
+            <h3>Follow Us</h3>
+            <ul class="social">
+              <li><a href="http://www.twitter.com/golfledger" title="Golf Ledger on Twitter"><i class="fa fa-twitter-square"></i>Twitter</a></li>
+              <li><a href="http://www.facebook.com/golfledger" title="Golf Ledger on Facebook"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+              <li><a href="http://www.pinterest.com/golfledger" title="Golf Ledger on Pinterest"><i class="fa fa-pinterest"></i>Pinterest</a></li>
+              <li><a href="http://www.instagram.com/golfledger" title="Golf Ledger on Instagram"><i class="fa fa-instagram"></i>Instagram</a></li>
+              <li><a href="https://plus.google.com/b/108238484007477722867/108238484007477722867/posts" title=""><i class="fa fa-google-plus-square"></i>Google+</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="bottom-footer">
+        <div class="inner-wrap clearfix">
+          <p class="copyright">&copy; Golf Ledger 2014</p>
+          <p class="footer-quote"><em><i class="fa fa-quote-left"></i> Golf is deceptively simple and endlessly complicated. <i class="fa fa-quote-right"></i></em> - Arnold Palmer</p>
+        </div>
+      </div>
+    </body>
+    </html>

@@ -12,7 +12,7 @@ from django.shortcuts import get_object_or_404
 #from forms import *
 from django.template.context import RequestContext
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 class PublicacionListView(ListView):
 	model = Publicacion
