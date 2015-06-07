@@ -9,6 +9,7 @@ from django.contrib import admin
 urlpatterns = patterns(
     "",
     url(r"^$", 'Feed.views.home', name="home"),
+    url(r'^categoria/(\d+)$', 'Feed.views.categoria', name='categoria'),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
     url(r'^feed/$', PublicacionListView.as_view(), name='publicaciones'),

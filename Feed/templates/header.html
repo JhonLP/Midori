@@ -1,0 +1,58 @@
+      <div id="header">
+        <div class="inner-wrap clearfix">
+          <div id="logo">
+            <a href="index.html"><img src="static/images/logo.png" alt="Golf Ledger"></a>
+          </div>
+          <a id="toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <ul id="nav" class="clearfix">
+            <li class="search">
+              <form action="http://www.midori.com/search/" name="search">
+                <fieldset>
+                  <input name="q" value="" id="search" placeholder="Buscar"/>
+                </fieldset>
+              </form>
+            </li>
+            <li class="right-nav"><a href="signup/index.html">Registrate</a></li>
+            <li class="right-nav"><a href="signin/index.html">Inicia Sesion</a></li>
+            <li class="left-nav has-sub"><a href="categories/index.html">Categorias <i class="fa fa-caret-down"></i></a>
+              <ul class="categories">
+                {% for categoria in categorias %}
+                <li>
+                  <a href="{% url "categoria" categoria.pk %}" title="{{categoria.titulo}}"><span class="cat-green cat-name">{{categoria}}</span> <!--<span class="cat-count">6</span>--></a>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="left-nav has-sub">
+              <a href="articles/index.html">Huertos <i class="fa fa-caret-down"></i></a>
+              <ul>
+                {% for huerto in huertos %}
+                <li><a href="{% url "huerto" huerto.pk %}">{{huerto}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="left-nav last-nav-left ellipsis has-sub">
+              <a href="about/index.html"><i class="fa fa-ellipsis-h"></i><span class="nav-more">Mas</span></a>
+              <ul>
+                <li><a href="leaderboard/index.html" title="Leaderboard">Tabla de lideres</a></li>
+                <li class="separate"><a href="about/index.html" title="About Golf Ledger">Sobre nosotros</a></li>
+                <li><a href="faq/index.html" title="Fequently Asked Questions">FAQs</a></li>
+                <li><a href="guidelines/index.html" title="Community Guidelines">Guia de comportamiento</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="sub-header" class="green-header">
+        <div class="inner-wrap clearfix">
+          <h1>La mejor comunidad de hortaleros, ahora en linea!</h1>
+          <ul>
+            <li><a href="signup/index.html" title="Join the Community" class="join-button">Unete a la comunidad!</a></li>
+            <li>o <a href="signin/index.html">Inicia Sesion</a></li>
+          </ul>
+        </div>
+      </div>
