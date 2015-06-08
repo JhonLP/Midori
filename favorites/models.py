@@ -1,6 +1,7 @@
 from django.db import models, connection
 
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from account.compat import AUTH_USER_MODEL
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
@@ -55,7 +56,7 @@ class FavoriteManager(models.Manager):
     
 
 class Favorite(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(AUTH_USER_MODEL)
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')

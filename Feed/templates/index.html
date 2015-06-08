@@ -40,7 +40,7 @@
               <article class="post clearfix no-img ">
                 <ul class="post-extras">
                   <li class="post-category">
-                    <a href="category/general-discussion/index.html" title="Ver Categoria" class="blue">{{post.categoria}}</a>
+                    <a href="{% url "categoria" post.categoria.pk %}" title="Ver Categoria" class="blue">{{post.categoria}}</a>
                   </li>
                   <li class="fav-wrap">
                     <input type='hidden' name='#' value='#'/>
