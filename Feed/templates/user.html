@@ -1,0 +1,122 @@
+
+{% include 'head.html' %}
+
+<body id="profile" class="" cz-shortcut-listen="true">
+
+	{% include 'header.html' %}
+
+	<div id="sub-header">
+		<div class="inner-wrap clearfix">
+			<div class="profile-details clearfix">
+				<img src="https://golfledger.s3.amazonaws.com/uploads/mugshots/6f35634d0f.jpg?Signature=9QgkommldGmVG77It0emDKUYQCs%3D&amp;Expires=1433741645&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="kenny_powders's Profile Image" class="profile-img" width="100" height="100">
+				<div class="profile-info-left">
+					<h1>{{usuario}}</h1>
+					<ul class="profile-info clearfix">
+						<li><i class="fa fa-flag"></i>Score: 4</li>
+					</ul>
+					<ul class="profile-meta clearfix">
+						<li class="follow">
+							<input type="hidden" name="csrfmiddlewaretoken" value="Xw6nDr2N0YbthCSsIq0OQKjUya59axfv">
+							<a href="/signup/" title="follow">follow</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="profile-stats clearfix">
+					<li><a href="/kenny_powders/comments/" title="kenny_powders's Comments">Comments<span>0</span></a></li>
+					<li><a href="/kenny_powders/favorites/" title="kenny_powders's Favorites">Favorites<span>0</span></a></li>
+					<li><a href="/kenny_powders/following/" title="Members kenny_powders is Following">Following<span>0</span></a></li>
+					<li><a href="/kenny_powders/followers/" title="kenny_powders's Followers">Followers<span>0</span></a></li>
+				</ul>
+			</div>
+			<ul id="profile-nav">
+				<li class="active"><a href="/kenny_powders/" title="kenny_powders's Submissions">Submissions</a></li>
+				<li><a href="/kenny_powders/comments/" title="kenny_powders's Comments">Comments</a></li>
+				<li><a href="/kenny_powders/favorites/" title="kenny_powders's Favorites">Favorites</a></li>
+				<li><a href="/kenny_powders/following/" title="kenny_powders's Following">Following</a></li>
+				<li><a href="/kenny_powders/followers/" title="kenny_powders's Followers">Followers</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div class="inner-wrap clearfix">
+			<div id="main-wrap">
+				<div id="main">
+					
+              {% if publicaciones %}
+     
+                {% for post in publicaciones %}
+
+              <article class="post clearfix no-img ">
+                <ul class="post-extras">
+                  <li class="post-category">
+                    <a href="{% url "categoria" post.categoria.pk %}" title="Ver Categoria" class="blue">{{post.categoria}}</a>
+                  </li>
+                  <li class="fav-wrap">
+                    <input type='hidden' name='#' value='#'/>
+                    <a href="signup/index.html" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
+                  </li>
+                  <!--<li class="post-latest-comment">
+                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#c=652" title="golpher replied 3 days, 13 hours ago" class="tooltip"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/3aa31a191a3578.jpg?Signature=q1XQ7P7T5nXKCgPcsXTB06XDCqc%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="golpher"/></a>
+                  </li>-->
+                </ul>
+                <article class="like-wrap ">
+                  <input type='hidden' name='#' value='#'/>
+                  <a href="signup/index.html" title="Me gusta"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
+                </article>
+                <article class="post-details">
+                  <h2>
+                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html" title="Ver publicacion">{{post.titulo}}</a></h2>
+                    <ul class="post-footer clearfix">
+                      <li class="submitter"><a href="{% url "usuario" post.usuario.pk %}" title="Ver Perfil"> <!--<img src="../golfledger.s3.amazonaws.com/uploads/mugshots/f5e2f83c91c9d2.jpg?Signature=q9OBmQQPjcXOpmJmUB7WfCOYZXQ%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt=""/>-->{{post.usuario}}</a>
+                      </li>
+                      <li class="comment"><a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#commentstart" title="Ver comentarios"><i class="fa fa-comment"></i>2 replies</a></li>
+                      <li class="post-date">
+                        <i class="fa fa-clock-o"></i>{{post.timestamp|timesince}}
+                      </li>
+                      <li class="mobile-category">
+                        <a href="category/general-discussion/index.html" title="Ver Categoria" class="blue"><i class="fa fa-folder"></i> {{post.categoria}}</a>
+                      </li>
+                      <li class="report">
+                        <input type='hidden' name='#' value='#'/>
+                        <a href="signup/index.html" title=""><i class="fa fa-flag tooltip" title="Reportar"></i></a>
+                      </a>
+                    </li>
+                  </ul>
+                </article>
+              </article>
+
+              {% endfor %}
+              {% else %}
+                NO HAY Publicaciones
+              {% endif %}
+						</div>
+					</div>
+					<div id="sidebar">
+						<ul id="sidebar-banners">
+
+							<li><a href="http://eepurl.com/T9w7T" title="Subscribe to the Golf Ledger Newsletter" target="_blank"><img src="/assets/images/ad_newsletter.png"></a></li>
+							<li><a href="http://www.rockbottomgolf.com/dalydeal.html" title="Rock Bottom Golf Daily Deal" target="_blank"><img src="http://lib.store.yahoo.net/lib/yhst-17159114447480/daly-deal-banner-300x250.jpg"></a></li>
+						</ul>
+						<h2>Recent Activity</h2>
+						<ul class="sidebar-stream">
+							<li>
+								<i class="fa fa-cloud-upload"></i>
+								submitted
+								<a href="
+								/681/doesnt-get-much-cooler-than-john-daly-at-the-open-1992/" title="Doesn't get much cooler than John Daly at The Open 1992">Doesn't get much cooler than John Daly at The Open 1992</a>
+								<p class="post-date"><i class="fa fa-clock-o"></i>2 days ago</p>
+							</li>
+							<li>
+								<i class="fa fa-cloud-upload"></i>
+								submitted
+								<a href="
+								/671/i-wonder-if-this-is-how-augusta-national-keeps-things-looking-so-green/" title="I wonder if this is how Augusta National keeps things looking so green?">I wonder if this is how Augusta National keeps things looking so green?</a>
+								<p class="post-date"><i class="fa fa-clock-o"></i>1 week ago</p>
+							</li>
+						</ul>
+						<p><a href="/kenny_powders/activity/" title="View full Activity Stream">View full Activity Stream</a></p>
+					</div>
+				</div>
+			</div>
+
+{% include 'foot.html' %}

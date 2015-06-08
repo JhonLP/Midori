@@ -15,6 +15,7 @@ urlpatterns = patterns(
     url(r"^favoritos/", include("favorites.urls")),
     url(r'^feed/$', PublicacionListView.as_view(), name='publicaciones'),
     url(r'^feed/(?P<pk>[\d]+)$', PublicacionDetailView.as_view(), name='publicaciones'),
+    url(r'^usuario/(\d+)$', 'Feed.views.usuario', name='usuario'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

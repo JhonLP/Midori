@@ -13,6 +13,7 @@ from django.shortcuts import get_object_or_404
 from django.template.context import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
+from account.models import Account
 
 class PublicacionListView(ListView):
 	model = Publicacion
@@ -44,3 +45,10 @@ def plus(request, id_publicacion):
 	enlace.votos = enlace.votos + 1
 	enlace.save()
 	return HttpResponseRedirect("/feed")
+
+def usuario(request,id_usuario):
+	categorias = Categoria.objects.all()
+	usuario = Account.objects.get(pk=id_usuario)
+	publicaciones = Publicacion.objects.filter(usuario = id_usuario)
+	template = "user.html"
+	return render(request,template,locals())
