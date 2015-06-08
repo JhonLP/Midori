@@ -133,6 +133,7 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "pinax.eventlog",
+    "favorites",
 
     # project
     "Midori",

@@ -12,6 +12,7 @@ urlpatterns = patterns(
     url(r'^categoria/(\d+)$', 'Feed.views.categoria', name='categoria'),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
+    url(r"^favoritos/", include("favorites.urls")),
     url(r'^feed/$', PublicacionListView.as_view(), name='publicaciones'),
     url(r'^feed/(?P<pk>[\d]+)$', PublicacionDetailView.as_view(), name='publicaciones'),
 )
