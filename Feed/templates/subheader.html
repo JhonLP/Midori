@@ -1,0 +1,17 @@
+    {% load i18n %}
+    {% load account_tags %}
+    {% load url from future %}
+    
+      <div id="sub-header" class="green-header">
+        <div class="inner-wrap clearfix">
+          <h1>La mejor comunidad de hortaleros, ahora en linea!</h1>
+          <ul>
+          	{% if request.user.is_authenticated %}
+          	<li><h3>Bienvenido {% user_display request.user %}</h3></li>
+          	{% else %}
+            <li><a href="{% url "account_signup" %}" title="Join the Community" class="join-button">Unete a la comunidad!</a></li>
+            <li>o <a href="{% url "account_login" %}">Inicia Sesion</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
