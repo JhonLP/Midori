@@ -138,6 +138,7 @@ INSTALLED_APPS = [
     # project
     "Midori",
     "Feed",
+    'actstream',
 ]
 
 # A sample logging configuration. The only tangible logging
