@@ -14,6 +14,8 @@ from django.template.context import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from account.models import Account
+#from actstream import action
+from actstream.actions import follow, unfollow
 
 class PublicacionListView(ListView):
 	model = Publicacion
@@ -45,6 +47,12 @@ def plus(request, id_publicacion):
 	enlace.votos = enlace.votos + 1
 	enlace.save()
 	return HttpResponseRedirect("/feed")
+
+#@login_required
+def seguir(request,id_usuario):
+	usuario = Account.objects.get(pk=id_usuario)
+	follow(request.user, usuario)
+	return HttpResponseRedirect("/")
 
 def usuario(request,id_usuario):
 	categorias = Categoria.objects.all()

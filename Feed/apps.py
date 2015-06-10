@@ -3,6 +3,7 @@ from django.utils.importlib import import_module
 from actstream import registry
 
 
+
 class AppConfig(BaseAppConfig):
 
     name = "Feed"
