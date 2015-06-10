@@ -15,10 +15,16 @@
 						<li><i class="fa fa-flag"></i>Score: 4</li>
 					</ul>
 					<ul class="profile-meta clearfix">
+						{% if siguiendo %}
+							<li class="follow">
+								<a href="{% url "noseguir" usuario.pk %}" title="unfollow">unfollow</a>
+							</li>
+						{% else %}
 						<li class="follow">
-							<input type="hidden" name="csrfmiddlewaretoken" value="Xw6nDr2N0YbthCSsIq0OQKjUya59axfv">
 							<a href="{% url "seguir" usuario.pk %}" title="follow">follow</a>
 						</li>
+						{% endif %}
+
 					</ul>
 				</div>
 				<ul class="profile-stats clearfix">

@@ -18,6 +18,7 @@ urlpatterns = patterns(
     url(r'^usuario/(\d+)$', 'Feed.views.usuario', name='usuario'),
     url(r'^activity/', include('actstream.urls')),
     url(r'^seguir/(?P<id_usuario>\d+)$', 'Feed.views.seguir', name='seguir'),
+    url(r'^noseguir/(?P<id_usuario>\d+)$', 'Feed.views.noseguir', name='noseguir'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
