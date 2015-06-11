@@ -59,6 +59,16 @@ def noseguir(request,id_usuario):
 	unfollow(request.user, usuario)
 	return HttpResponseRedirect("/usuario/%s" %id_usuario)
 
+def favorito(request,id_publicacion):
+	publicacion = Publicacion.objects.get(pk=id_publicacion)
+	follow(request.user, publicacion,actor_only=False)
+	return HttpResponseRedirect("/")
+
+def nofavorito(request,id_publicacion):
+	publicacion = Publicacion.objects.get(pk=id_publicacion)
+	unfollow(request.user, publicacion,actor_only=False)
+	return HttpResponseRedirect("/")
+
 def usuario(request,id_usuario):
 	categorias = Categoria.objects.all()
 	usuario = Account.objects.get(pk=id_usuario)
