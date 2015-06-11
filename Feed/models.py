@@ -22,6 +22,7 @@ class Publicacion(models.Model):
 		return self.titulo
 
 
+
 class Huerto(models.Model):
 	titulo = models.CharField(max_length = 140)
 	seguidores = models.IntegerField(default = 0)

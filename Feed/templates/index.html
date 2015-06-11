@@ -46,7 +46,11 @@
                   </li>
                   <li class="fav-wrap">
                     <input type='hidden' name='#' value='#'/>
-                    <a href="{% url "favorito" post.pk %}" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
+                    {% if True %}
+                    <a href="">{{post.pk}}</a>
+                    {% else %}
+                    <a href="{% url "favorito" post.pk %}" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span>{{post.es_favorito}}</a>
+                    {% endif %}
                   </li>
                   <!--<li class="post-latest-comment">
                     <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#c=652" title="golpher replied 3 days, 13 hours ago" class="tooltip"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/3aa31a191a3578.jpg?Signature=q1XQ7P7T5nXKCgPcsXTB06XDCqc%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="golpher"/></a>

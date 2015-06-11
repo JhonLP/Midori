@@ -30,7 +30,7 @@ class PublicacionDetailView(DetailView):
 
 def home(request):
 	categorias = Categoria.objects.all()
-	publicaciones = Publicacion.objects.order_by("-votos").all()[:15] #limita a 50 resultados
+	publicaciones = Publicacion.objects.order_by("-votos").all()[:15] #limita a 15 resultados
 	template = "index.html"
 	return render(request,template,locals())	
 
@@ -48,22 +48,25 @@ def plus(request, id_publicacion):
 	enlace.save()
 	return HttpResponseRedirect("/feed")
 
-#@login_required
+@login_required
 def seguir(request,id_usuario):
 	usuario = Account.objects.get(pk=id_usuario)
 	follow(request.user, usuario)
 	return HttpResponseRedirect("/usuario/%s" %id_usuario)
 
+@login_required
 def noseguir(request,id_usuario):
 	usuario = Account.objects.get(pk=id_usuario)
 	unfollow(request.user, usuario)
 	return HttpResponseRedirect("/usuario/%s" %id_usuario)
 
+@login_required
 def favorito(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
 	follow(request.user, publicacion,actor_only=False)
 	return HttpResponseRedirect("/")
 
+@login_required
 def nofavorito(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
 	unfollow(request.user, publicacion,actor_only=False)
