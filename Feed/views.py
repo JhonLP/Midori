@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from account.models import Account
 #from actstream import action
-from actstream.actions import follow, unfollow, is_following
+from actstream.actions import follow, unfollow
 
 class PublicacionListView(ListView):
 	model = Publicacion
@@ -80,6 +80,5 @@ def usuario(request,id_usuario):
 	categorias = Categoria.objects.all()
 	usuario = Account.objects.get(pk=id_usuario)
 	publicaciones = Publicacion.objects.filter(usuario = id_usuario)
-	siguiendo = is_following(request.user,usuario)
 	template = "user.html"
 	return render(request,template,locals())

@@ -1,4 +1,4 @@
-
+{% load activity_tags %}
 {% include 'head.html' %}
 
 <body id="profile" class="" cz-shortcut-listen="true">
@@ -10,21 +10,24 @@
 			<div class="profile-details clearfix">
 				<!--<img src="https://golfledger.s3.amazonaws.com/uploads/mugshots/6f35634d0f.jpg?Signature=9QgkommldGmVG77It0emDKUYQCs%3D&amp;Expires=1433741645&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="kenny_powders's Profile Image" class="profile-img" width="100" height="100">-->
 				<div class="profile-info-left">
-					<h1>{{usuario}}</h1>
+					<h1>{{usuario.user}}</h1>
 					<ul class="profile-info clearfix">
 						<li><i class="fa fa-flag"></i>Score: 4</li>
 					</ul>
 					<ul class="profile-meta clearfix">
-						{% if siguiendo %}
-							<li class="follow">
-								<a href="{% url "noseguir" usuario.pk %}" title="unfollow">unfollow</a>
-							</li>
-						{% else %}
-						<li class="follow">
-							<a href="{% url "seguir" usuario.pk %}" title="follow">follow</a>
-						</li>
-						{% endif %}
 
+						{% ifequal request.user usuario.user %}
+						{% else %}
+							{% if request.user|is_following:usuario %}
+								<li class="follow">
+									<a href="{% url "noseguir" usuario.pk %}" title="unfollow">unfollow</a>
+								</li>
+							{% else %}
+							<li class="follow">
+								<a href="{% url "seguir" usuario.pk %}" title="follow">follow</a>
+							</li>
+							{% endif %}
+						{% endifequal %}
 					</ul>
 				</div>
 				<ul class="profile-stats clearfix">
