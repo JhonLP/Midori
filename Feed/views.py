@@ -63,13 +63,17 @@ def noseguir(request,id_usuario):
 @login_required
 def favorito(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
+	publicacion.favoritos = publicacion.favoritos + 1
+	publicacion.save()
 	follow(request.user, publicacion,actor_only=False)
 	return HttpResponseRedirect("/")
 
 @login_required
 def nofavorito(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
-	unfollow(request.user, publicacion,actor_only=False)
+	publicacion.favoritos = publicacion.favoritos - 1
+	publicacion.save()
+	unfollow(request.user, publicacion)
 	return HttpResponseRedirect("/")
 
 def usuario(request,id_usuario):

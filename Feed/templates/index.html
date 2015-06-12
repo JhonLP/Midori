@@ -1,4 +1,4 @@
-
+{% load activity_tags %}
   {% include 'head.html' %}
 
     <body id="home" class="">
@@ -46,10 +46,10 @@
                   </li>
                   <li class="fav-wrap">
                     <input type='hidden' name='#' value='#'/>
-                    {% if True %}
-                    <a href="">{{post.pk}}</a>
+                    {% if request.user|is_following:post %}
+                    <a href="{% url "nofavorito" post.pk %}" title="Quitar de Favoritos"><i class="fa fa-heart" style="color: #de5049"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
                     {% else %}
-                    <a href="{% url "favorito" post.pk %}" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span>{{post.es_favorito}}</a>
+                    <a href="{% url "favorito" post.pk %}" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
                     {% endif %}
                   </li>
                   <!--<li class="post-latest-comment">
