@@ -58,7 +58,11 @@
                 </ul>
                 <article class="like-wrap ">
                   <input type='hidden' name='#' value='#'/>
-                  <a href="signup/index.html" title="Me gusta"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
+                  {% if request.user|likes:post %}
+                  <a href="{% url "nomas" post.pk %}" title="Ya no me gusta"><i class="fa fa-arrow-up" style="color: #FF8000"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
+                  {% else %}
+                  <a href="{% url "mas" post.pk %}" title="Me gusta"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
+                  {% endif %}
                 </article>
                 <article class="post-details">
                   <h2>

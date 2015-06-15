@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from account.models import Account
 #from actstream import action
-from actstream.actions import follow, unfollow
+from actstream.actions import follow, unfollow, like, unlike
 
 class PublicacionListView(ListView):
 	model = Publicacion
@@ -81,7 +81,7 @@ def mas(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
 	publicacion.votos = publicacion.votos + 1
 	publicacion.save()
-	follow(request.user, publicacion,actor_only=False)
+	like(request.user, publicacion)
 	return HttpResponseRedirect("/")
 
 @login_required
@@ -89,7 +89,7 @@ def nomas(request,id_publicacion):
 	publicacion = Publicacion.objects.get(pk=id_publicacion)
 	publicacion.votos = publicacion.votos - 1
 	publicacion.save()
-	unfollow(request.user, publicacion)
+	unlike(request.user, publicacion)
 	return HttpResponseRedirect("/")
 
 def usuario(request,id_usuario):

@@ -1,4 +1,4 @@
-from actstream.models import Follow
+from actstream.models import Follow, Like
 from django.template import Library
 
 register = Library()
@@ -15,4 +15,8 @@ def is_following(user, actor):
     """
     return Follow.objects.is_following(user, actor)
 
+def likes(user, actor):
+	return Like.objects.is_like(user,actor)
+
 register.filter(is_following)
+register.filter(likes)
