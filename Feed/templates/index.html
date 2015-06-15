@@ -35,61 +35,7 @@
           <div id="main-wrap">
             <div id="main">
 
-              {% if publicaciones %}
-     
-                {% for post in publicaciones %}
-
-              <article class="post clearfix no-img ">
-                <ul class="post-extras">
-                  <li class="post-category">
-                    <a href="{% url "categoria" post.categoria.pk %}" title="Ver Categoria" class="blue">{{post.categoria}}</a>
-                  </li>
-                  <li class="fav-wrap">
-                    <input type='hidden' name='#' value='#'/>
-                    {% if request.user|is_following:post %}
-                    <a href="{% url "nofavorito" post.pk %}" title="Quitar de Favoritos"><i class="fa fa-heart" style="color: #de5049"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
-                    {% else %}
-                    <a href="{% url "favorito" post.pk %}" title="Agregar a Favoritos"><i class="fa fa-heart"></i><span class="favsCounter" id="FavCounter_661">{{post.favoritos}}</span></a>
-                    {% endif %}
-                  </li>
-                  <!--<li class="post-latest-comment">
-                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#c=652" title="golpher replied 3 days, 13 hours ago" class="tooltip"><img src="../golfledger.s3.amazonaws.com/uploads/mugshots/3aa31a191a3578.jpg?Signature=q1XQ7P7T5nXKCgPcsXTB06XDCqc%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt="golpher"/></a>
-                  </li>-->
-                </ul>
-                <article class="like-wrap ">
-                  <input type='hidden' name='#' value='#'/>
-                  {% if request.user|likes:post %}
-                  <a href="{% url "nomas" post.pk %}" title="Ya no me gusta"><i class="fa fa-arrow-up" style="color: #FF8000"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
-                  {% else %}
-                  <a href="{% url "mas" post.pk %}" title="Me gusta"><i class="fa fa-arrow-up"></i><span class="likesCounter" id="LikeCounter_661">{{post.votos}}</span></a>
-                  {% endif %}
-                </article>
-                <article class="post-details">
-                  <h2>
-                    <a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html" title="Ver publicacion">{{post.titulo}}</a></h2>
-                    <ul class="post-footer clearfix">
-                      <li class="submitter"><a href="{% url "usuario" post.usuario.pk %}" title="Ver Perfil"> <!--<img src="../golfledger.s3.amazonaws.com/uploads/mugshots/f5e2f83c91c9d2.jpg?Signature=q9OBmQQPjcXOpmJmUB7WfCOYZXQ%3D&amp;Expires=1433476875&amp;AWSAccessKeyId=AKIAJM7TD5KDKW4QLAUA" alt=""/>-->{{post.usuario}}</a>
-                      </li>
-                      <li class="comment"><a href="661/i-think-its-safe-to-assume-that-i-cant-do-this/index.html#commentstart" title="Ver comentarios"><i class="fa fa-comment"></i>2 replies</a></li>
-                      <li class="post-date">
-                        <i class="fa fa-clock-o"></i>{{post.timestamp|timesince}}
-                      </li>
-                      <li class="mobile-category">
-                        <a href="category/general-discussion/index.html" title="Ver Categoria" class="blue"><i class="fa fa-folder"></i> {{post.categoria}}</a>
-                      </li>
-                      <li class="report">
-                        <input type='hidden' name='#' value='#'/>
-                        <a href="signup/index.html" title=""><i class="fa fa-flag tooltip" title="Reportar"></i></a>
-                      </a>
-                    </li>
-                  </ul>
-                </article>
-              </article>
-
-              {% endfor %}
-              {% else %}
-                NO HAY Publicaciones
-              {% endif %}
+              {% include 'publicaciones.html' %}
 
             </div>
 
