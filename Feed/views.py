@@ -76,6 +76,22 @@ def nofavorito(request,id_publicacion):
 	unfollow(request.user, publicacion)
 	return HttpResponseRedirect("/")
 
+@login_required
+def mas(request,id_publicacion):
+	publicacion = Publicacion.objects.get(pk=id_publicacion)
+	publicacion.votos = publicacion.votos + 1
+	publicacion.save()
+	follow(request.user, publicacion,actor_only=False)
+	return HttpResponseRedirect("/")
+
+@login_required
+def nomas(request,id_publicacion):
+	publicacion = Publicacion.objects.get(pk=id_publicacion)
+	publicacion.votos = publicacion.votos - 1
+	publicacion.save()
+	unfollow(request.user, publicacion)
+	return HttpResponseRedirect("/")
+
 def usuario(request,id_usuario):
 	categorias = Categoria.objects.all()
 	usuario = Account.objects.get(pk=id_usuario)

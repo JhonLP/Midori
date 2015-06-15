@@ -12,13 +12,13 @@ class FavoriteManager(models.Manager):
     def favorites_for_user(self, user):
         """ Returns Favorites for a specific user
         """
-        return self.get_query_set().filter(user=user)
+        return self.get_queryset().filter(user=user)
     
     def favorites_for_model(self, model, user=None):
         """ Returns Favorites for a specific model
         """
         content_type = ContentType.objects.get_for_model(model)
-        qs = self.get_query_set().filter(content_type=content_type)
+        qs = self.get_queryset().filter(content_type=content_type)
         if user:
             qs = qs.filter(user=user)
         return qs
@@ -27,7 +27,7 @@ class FavoriteManager(models.Manager):
         """ Returns Favorites for a specific object
         """
         content_type = ContentType.objects.get_for_model(type(obj))
-        qs = self.get_query_set().filter(content_type=content_type, 
+        qs = self.get_queryset().filter(content_type=content_type, 
                                          object_id=obj.pk)
         if user:
             qs = qs.filter(user=user)
@@ -38,7 +38,7 @@ class FavoriteManager(models.Manager):
         """Returns the favorite, if exists for obj by user
         """
         content_type = ContentType.objects.get_for_model(type(obj))
-        return self.get_query_set().get(content_type=content_type,
+        return self.get_queryset().get(content_type=content_type,
                                         object_id=obj.pk)
     
     @classmethod

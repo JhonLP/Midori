@@ -21,6 +21,8 @@ urlpatterns = patterns(
     url(r'^noseguir/(?P<id_usuario>\d+)$', 'Feed.views.noseguir', name='noseguir'),
     url(r'^favorito/(?P<id_publicacion>\d+)$', 'Feed.views.favorito', name='favorito'),
     url(r'^nofavorito/(?P<id_publicacion>\d+)$', 'Feed.views.nofavorito', name='nofavorito'),
+    url(r'^mas/(?P<id_publicacion>\d+)$', 'Feed.views.mas', name='mas'),
+    url(r'^nomas/(?P<id_publicacion>\d+)$', 'Feed.views.nomas', name='nomas'),
 
 )
 
