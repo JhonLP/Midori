@@ -41,12 +41,10 @@ def categoria(request,id_categoria):
 	template = "index.html"
 	return render(request,template,locals())
 
-@login_required
-def plus(request, id_publicacion):
-	enlace = Enlace.objects.get(pk=id_publicacion)
-	enlace.votos = enlace.votos + 1
-	enlace.save()
-	return HttpResponseRedirect("/feed")
+def post(request, id_publicacion):
+	publicacion = Publicacion.objects.get(pk = id_publicacion)
+	template = "post.html"
+	return render(request,template,locals())
 
 @login_required
 def seguir(request,id_usuario):

@@ -11,6 +11,7 @@ class Categoria(models.Model):
 
 class Publicacion(models.Model):
 	titulo = models.CharField(max_length = 140)
+	descripcion = models.CharField(max_length = 1200, default = 'Sin descripcion')
 	votos = models.IntegerField(default = 0)
 	favoritos = models.IntegerField(default = 0)
 	categoria = models.ForeignKey(Categoria)

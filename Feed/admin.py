@@ -2,10 +2,10 @@ from django.contrib import admin
 from models import Publicacion,Categoria
 
 class PublicacionAdmin(admin.ModelAdmin):
-	list_display = ('id','titulo','categoria','votos','favoritos','usuario',)
+	list_display = ('id','titulo', 'descripcion','categoria','votos','favoritos','usuario',)
 	list_filter = ('categoria','usuario',)
 	search_fields = ('categoria__titulo',)
-	list_editable = ('titulo','categoria',)
+	list_editable = ('titulo','descripcion','categoria', 'votos', 'favoritos',)
 	list_display_links = ('id',)
 	raw_id_fields = ('usuario',)
 
