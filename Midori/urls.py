@@ -16,7 +16,7 @@ urlpatterns = patterns(
     #Sistema de usuarios
     url(r"^account/", include("account.urls")),
     url(r'^usuario/(\d+)$', 'Feed.views.usuario', name='usuario'),
-    #url(r"^favoritos/", include("favorites.urls")),
+    
 
     #Sistema de feed
     url(r'^feed/$', PublicacionListView.as_view(), name='publicaciones'),

@@ -105,7 +105,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    #"Feed.middleware.FavoritoMiddleware"
 ]
 
 ROOT_URLCONF = "Midori.urls"
@@ -125,7 +124,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.staticfiles",
-
     # theme
     "bootstrapform",
     "pinax_theme_bootstrap",
@@ -134,7 +132,7 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "pinax.eventlog",
-    "favorites",
+    "django_comments",
 
     # project
     "Midori",
